@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC2023EE2BBC657D00F98F0B /* SpotifyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2023ED2BBC657D00F98F0B /* SpotifyHomeView.swift */; };
+		BC2023F02BBC67FB00F98F0B /* SpotifyCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2023EF2BBC67FB00F98F0B /* SpotifyCategoryCell.swift */; };
+		BC2023F32BBC69EB00F98F0B /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC2023F22BBC69EB00F98F0B /* Category.swift */; };
 		BC925AEC2BBC4EBE002D7A0D /* spotifyCloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC925AEB2BBC4EBE002D7A0D /* spotifyCloneApp.swift */; };
 		BC925AEE2BBC4EBE002D7A0D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC925AED2BBC4EBE002D7A0D /* ContentView.swift */; };
 		BC925AF02BBC4EBF002D7A0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC925AEF2BBC4EBF002D7A0D /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC2023ED2BBC657D00F98F0B /* SpotifyHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyHomeView.swift; sourceTree = "<group>"; };
+		BC2023EF2BBC67FB00F98F0B /* SpotifyCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyCategoryCell.swift; sourceTree = "<group>"; };
+		BC2023F22BBC69EB00F98F0B /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		BC925AE82BBC4EBE002D7A0D /* spotifyClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spotifyClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC925AEB2BBC4EBE002D7A0D /* spotifyCloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = spotifyCloneApp.swift; sourceTree = "<group>"; };
 		BC925AED2BBC4EBE002D7A0D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -47,6 +53,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC2023E92BBC655400F98F0B /* Spotify */ = {
+			isa = PBXGroup;
+			children = (
+				BC2023F12BBC69D000F98F0B /* Models */,
+				BC2023EC2BBC656B00F98F0B /* Components */,
+				BC2023EB2BBC656600F98F0B /* Core */,
+			);
+			path = Spotify;
+			sourceTree = "<group>";
+		};
+		BC2023EB2BBC656600F98F0B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BC2023ED2BBC657D00F98F0B /* SpotifyHomeView.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		BC2023EC2BBC656B00F98F0B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BC2023EF2BBC67FB00F98F0B /* SpotifyCategoryCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BC2023F12BBC69D000F98F0B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BC2023F22BBC69EB00F98F0B /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BC925ADF2BBC4EBE002D7A0D = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +106,7 @@
 		BC925AEA2BBC4EBE002D7A0D /* spotifyClone */ = {
 			isa = PBXGroup;
 			children = (
+				BC2023E92BBC655400F98F0B /* Spotify */,
 				BC925AFD2BBC5037002D7A0D /* Shared */,
 				BC925AEB2BBC4EBE002D7A0D /* spotifyCloneApp.swift */,
 				BC925AED2BBC4EBE002D7A0D /* ContentView.swift */,
@@ -175,9 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC2023F02BBC67FB00F98F0B /* SpotifyCategoryCell.swift in Sources */,
 				BC925B012BBC5196002D7A0D /* DatabaseHelper.swift in Sources */,
 				BC925AFF2BBC503E002D7A0D /* ImageLoaderView.swift in Sources */,
 				BC925B052BBC54DC002D7A0D /* User.swift in Sources */,
+				BC2023EE2BBC657D00F98F0B /* SpotifyHomeView.swift in Sources */,
+				BC2023F32BBC69EB00F98F0B /* Category.swift in Sources */,
 				BC925B032BBC54BD002D7A0D /* Product.swift in Sources */,
 				BC925AEE2BBC4EBE002D7A0D /* ContentView.swift in Sources */,
 				BC925AEC2BBC4EBE002D7A0D /* spotifyCloneApp.swift in Sources */,
