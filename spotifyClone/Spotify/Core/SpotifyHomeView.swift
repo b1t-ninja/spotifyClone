@@ -5,10 +5,12 @@
 //
 
 import SwiftUI
+import SwiftfulUI
 
 struct SpotifyHomeView: View {
     @State private var currentUser: User? = nil
     @State private var selectedCategory: Category? = nil
+    @State private var products: [Product] = []
     var body: some View {
         ZStack {
             Color.spotifyBlack.ignoresSafeArea()
@@ -16,6 +18,14 @@ struct SpotifyHomeView: View {
                 LazyVStack(spacing: 16, pinnedViews: [.sectionHeaders]) {
                     
                     Section {
+                        VStack(spacing: 16) {
+                            recentsSection
+                            // tripple click the name and then press control + m to format
+                            if let firstProduct = products.first {
+                                newReleaseSection(firstProduct: firstProduct)
+                            }
+                        }
+                        .padding(.horizontal, 16)
                         ForEach(0..<20) {_ in
                             Rectangle()
                                 .frame(width: 200, height: 200)
@@ -38,6 +48,7 @@ struct SpotifyHomeView: View {
     private func getData() async {
         do {
             currentUser = try await DatabaseHelper().getUsers().first
+            products = try await Array(DatabaseHelper().getProducts().prefix(8)) // gives subsequence of the first 8 elems
         } catch {}
     }
     
@@ -72,6 +83,25 @@ struct SpotifyHomeView: View {
         .padding(.vertical, 24)
         .padding(.leading, 8)
         .background(.spotifyBlack)
+    }
+    private var recentsSection: some View {
+        NonLazyVGrid(columns: 2, alignment: .center, spacing: 10, items: products) { product in
+            if let product {
+                SpotifyRecentsCell(imageName: product.firstImage, title: product.title)
+            }
+        }
+    }
+    
+    private func newReleaseSection(firstProduct: Product) -> some View {
+        SpotifyNewReleaseCell(
+            imageName: firstProduct.firstImage,
+            headline: firstProduct.brand,
+            subHeadline: firstProduct.category,
+            title: firstProduct.title,
+            subtitle: firstProduct.description,
+            onAddToPlaylistPressed: nil,
+            onPlayPressed: nil
+        )
     }
 }
 
